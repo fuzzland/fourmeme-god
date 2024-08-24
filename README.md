@@ -1,6 +1,6 @@
 # FOUR.MEME Sandwich Bot
 
-This bot is built by [@tonyke-bot](https://github.com/tonyke-bot) and [@shouc](https://github.com/shouc) using revm and artemis. 
+This bot is built by [@tonyke-bot](https://github.com/tonyke-bot) and [@shouc](https://github.com/shouc) using [alloy](https://github.com/alloy-rs/alloy) and [burberry](https://github.com/tonyke-bot/burberry) (mod of [artemis](https://github.com/paradigmxyz/artemis)) 
 
 ### Build
 Ensure you have Rust installed via https://rustup.rs/

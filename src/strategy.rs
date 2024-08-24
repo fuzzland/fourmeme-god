@@ -3,7 +3,7 @@ use std::{collections::HashSet, num::NonZeroUsize, sync::Arc, time::Instant};
 use alloy::{
     eips::BlockNumberOrTag,
     network::TransactionBuilder,
-    primitives::{Bytes, B256, U256},
+    primitives::{Address, Bytes, B256, U256},
     providers::Provider,
     rpc::types::{Block, Transaction, TransactionRequest},
     sol_types::SolInterface,
@@ -13,7 +13,6 @@ use burberry::ActionSubmitter;
 use clap::Parser;
 use eyre::{ContextCompat, WrapErr};
 use lru::LruCache;
-use revm::primitives::Address;
 use tracing::{debug, error, info, instrument};
 
 use crate::{
@@ -28,16 +27,6 @@ use crate::{
 
 #[derive(Debug, Clone, Parser)]
 pub struct Config {
-    #[arg(
-        long,
-        default_value = "110",
-        help = "Amplify the gas limit by this ratio. Denominated in 100"
-    )]
-    gas_factor: u128,
-
-    #[arg(long, default_value = "500", help = "Max 10000")]
-    bribe_ratio: u16,
-
     #[arg(long, default_value = "1000000000", help = "Gas price in wei")]
     gas_price: u128,
 }
